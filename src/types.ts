@@ -91,10 +91,28 @@ export interface Theme {
   };
 }
 
-export type AgendaEntry = {
+export type Department = {
+  id: number;
+  department: string;
+  location: string;
+};
+
+export type Person = {
+  id: number;
   name: string;
-  height: number;
-  day: string;
+  department: Department;
+};
+
+
+export type AgendaEntry = {
+  name?: string;
+  height?: number;
+  day?: string;
+  id: number;
+  person: Person;
+  department: Department;
+  start: string;
+  end: string;
 }
 
 export type AgendaSchedule = {
